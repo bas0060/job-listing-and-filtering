@@ -6,6 +6,7 @@
   <title>Job listing and filtering</title>
   <link rel="stylesheet" href="./src/output.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./static-job-listings-master/images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
@@ -19,13 +20,17 @@
   <!-- hero -->
   <!-- jobs -->
    <section class=" bg-green-100 flex flex-col gap-y-[4rem] lg:gap-y-[2rem] py-[4rem]">
-    <article class="relative bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-3  gap-y-6 px-6 py-7 rounded-[.5rem] border-l-[.36rem] border-green-300">
+    <div class="container bg-white p-4 lg:h-[4.4rem] rounded-lg shadow-md lg:flex items-center justify-between mb-6">
+      <div id="filter-container" class="container flex gap-2 mb-4"></div>
+      <button id="clear-filters" class="text-teal-600 font-semibold hover:underline">Clear</button>  
+    </div>
+    <article class="relative job-card bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-3  gap-y-6 px-6 py-7 rounded-[.5rem] border-l-[.36rem] border-teal-600">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto lg:pb-3 left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/photosnap.svg" alt="photosnap">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 lg:text-[1.1rem] font-semibold pr-3"> Photosnap</h3>
-            <h3 class="bg-green-300 text-white text-[1rem] font-semibold p-2 rounded-[3.5rem]">NEW!</h3>
+            <h3 class=" text-teal-600 lg:text-[1.1rem] font-semibold pr-3"> Photosnap</h3>
+            <h3 class="bg-teal-600 text-white text-[1rem] font-semibold p-2 rounded-[3.5rem]">NEW!</h3>
             <h3 class="bg-black text-white text-[1rem] font-semibold p-2 rounded-[3.5rem]">FEATURED</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold "> Senior Frontend Developer</h3>
@@ -41,25 +46,25 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 lg:pb-3 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Senior</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> HTML</h3>
+          <h3 class="bg-green-100 job-tag cursor-pointer text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
+          <h3 class="bg-green-100 job-tag cursor-pointer text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Senior</h3>
+          <h3 class="bg-green-100 job-tag cursor-pointer text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> HTML</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> CSS</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
+          <h3 class="bg-green-100 job-tag cursor-pointer text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> CSS</h3>
+          <h3 class="bg-green-100 job-tag cursor-pointer text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
         </div>
       </div>
     </article>
 
     <!-- 2 -->
-    <article class="relative bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-3 gap-y-6 px-6 py-7 rounded-[.5rem] border-l-[.36rem] border-green-300">
+    <article class="relative job-card bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-3 gap-y-6 px-6 py-7 rounded-[.5rem] border-l-[.36rem] border-teal-600">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto lg:pb-3 left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/manage.svg" alt="manage">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 text-[1.1rem] font-semibold pr-3"> Manage</h3>
-            <h3 class="bg-green-300 text-white text-[1rem] font-semibold p-2 rounded-[3.5rem]">NEW!</h3>
+            <h3 class=" text-teal-600 text-[1.1rem] font-semibold pr-3"> Manage</h3>
+            <h3 class="bg-teal-600 text-white text-[1rem] font-semibold p-2 rounded-[3.5rem]">NEW!</h3>
             <h3 class="bg-black text-white text-[1rem] font-semibold p-2 rounded-[3.5rem]">FEATURED</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold "> Fullstack Developer</h3>
@@ -75,24 +80,24 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 lg:pb-3 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Fullstack</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Midweight</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Python</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Fullstack</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Midweight</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Python</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> React</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> React</h3>
         </div>
       </div>
     </article>
 
     <!-- 3 -->
-    <article class="relative bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-3 gap-y-6 px-6 py-7 rounded-[.5rem]">
+    <article class="relative job-card bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-3 gap-y-6 px-6 py-7 rounded-[.5rem]">
      <div class="lg:flex lg:items-center lg:gap-x-6">
       <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto lg:pb-3  left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/account.svg" alt="account">
       <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
         <div class="flex items-center gap-x-3">
-          <h3 class=" text-green-300 text-[1.1rem] font-semibold pr-3"> Account</h3>
-          <h3 class="bg-green-300 text-white text-[1rem] font-semibold p-2 rounded-[3.5rem]">NEW!</h3>
+          <h3 class=" text-teal-600 text-[1.1rem] font-semibold pr-3"> Account</h3>
+          <h3 class="bg-teal-600 text-white text-[1rem] font-semibold p-2 rounded-[3.5rem]">NEW!</h3>
         </div>
         <h3 class=" text-black text-[1rem] font-semibold "> Junior Frontend Developer</h3>
         <div class="flex items-center gap-x-2">
@@ -107,24 +112,24 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 lg:pb-3 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg">React</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg">React</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Sass</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Sass</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
         </div>
       </div>
     </article>
     
     <!-- 4 -->
-    <article class="relative bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
+    <article class="relative job-card bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto  left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/myhome.svg" alt="myhome">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 text-[1.1rem] font-semibold pt-2 pr-3"> MyHome</h3>
+            <h3 class=" text-teal-600 text-[1.1rem] font-semibold pt-2 pr-3"> MyHome</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold "> Junior Frontend Developer</h3>
           <div class="flex items-center gap-x-2">
@@ -139,23 +144,23 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg">CSS</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg">CSS</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
         </div>
       </div>
     </article>
     
     <!-- 5 -->
-    <article class="relative bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
+    <article class="relative job-card bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto  left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/loop-studios.svg" alt="loop-studios">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 text-[1.1rem] font-semibold pt-2 pr-3"> Loop Studios</h3>
+            <h3 class=" text-teal-600 text-[1.1rem] font-semibold pt-2 pr-3"> Loop Studios</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold "> Software Engineer</h3>
           <div class="flex items-center gap-x-2">
@@ -170,13 +175,13 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Fullstack</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Midweight</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Fullstack</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Midweight</h3>
         </div>
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg">Sass</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Ruby</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg">Sass</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Ruby</h3>
         </div>
       </div>
     </article>
@@ -188,12 +193,12 @@
     <script src="./joblist.js"></script>
     
     <!-- 6 -->
-    <article class="relative bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
+    <article class="relative job-card bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto  left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/faceit.svg" alt="Facelt">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 text-[1.1rem] font-semibold pt-2 pr-3"> Facelt</h3>
+            <h3 class=" text-teal-600 text-[1.1rem] font-semibold pt-2 pr-3"> Facelt</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold "> Junior Backend Developer</h3>
           <div class="flex items-center gap-x-2">
@@ -208,23 +213,23 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Backend</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg">Ruby</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Backend</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg">Ruby</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> RoR</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> RoR</h3>
         </div>
       </div>
     </article>
 
     <!-- 7 -->
-    <article class="relative bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
+    <article class="relative job-card bg-green-50 container shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto  left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/shortly.svg" alt="shortly">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 text-[1.1rem] font-semibold pt-2 pr-3"> Shortly</h3>
+            <h3 class=" text-teal-600 text-[1.1rem] font-semibold pt-2 pr-3"> Shortly</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold ">Junior Developer</h3>
           <div class="flex items-center gap-x-2">
@@ -239,24 +244,24 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg">HTML</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg">HTML</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Sass</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Sass</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
         </div>
       </div>
     </article>
 
     <!-- 8 -->
-    <article class="relative bg-green-50 shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] container flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
+    <article class="relative job-card bg-green-50 shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] container flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto  left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/insure.svg" alt="insure">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 text-[1.1rem] font-semibold pt-2 pr-3"> Insure</h3>
+            <h3 class=" text-teal-600 text-[1.1rem] font-semibold pt-2 pr-3"> Insure</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold "> Junior Frontend Developer</h3>
           <div class="flex items-center gap-x-2">
@@ -271,24 +276,24 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg">Vue</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg">Vue</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Sass</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Sass</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
         </div>
       </div>
     </article>
 
     <!-- 9 -->
-    <article class="relative bg-green-50 container flex shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
+    <article class="relative job-card bg-green-50 container flex shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto  left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/eyecam-co.svg" alt="eyecam-co.">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 text-[1.1rem] font-semibold pt-2 pr-3"> Eyecam Co.</h3>
+            <h3 class=" text-teal-600 text-[1.1rem] font-semibold pt-2 pr-3"> Eyecam Co.</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold ">Fullstack Engineer</h3>
           <div class="flex items-center gap-x-2">
@@ -303,24 +308,24 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row lg:gap-x-4 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Fullstack</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Midweight</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Fullstack</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Midweight</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Django</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Python</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Django</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Python</h3>
         </div>
       </div>
     </article>
 
     <!-- 10 -->
-    <article class="relative shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] bg-green-50 container flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
+    <article class="relative job-card shadow-[4px_4px_13px_rgba(134,239,172,0.5),-4px_4px_10px_rgba(134,239,172,0.5)] bg-green-50 container flex flex-col lg:flex-row lg:items-center lg:justify-between lg:pb-5 gap-y-6 px-6 py-7 rounded-[.5rem]">
       <div class="lg:flex lg:items-center lg:gap-x-6">
         <img class="w-[4rem] absolute lg:relative lg:left-auto lg:top-auto  left-[1.2rem] top-[-2.5rem]" src="./static-job-listings-master/images/the-air-filter-company.svg" alt="the-air-filter-company">
         <div class="flex flex-col gap-y-5 lg:gap-y-2 lg:border-none border-b-2 border-neutral-400 pb-4">
           <div class="flex items-center gap-x-3">
-            <h3 class=" text-green-300 text-[1.1rem] font-semibold pt-2 pr-3"> The Air Filter Company</h3>
+            <h3 class=" text-teal-600 text-[1.1rem] font-semibold pt-2 pr-3"> The Air Filter Company</h3>
           </div>
           <h3 class=" text-black text-[1rem] font-semibold ">Front-end Dev</h3>
           <div class="flex items-center gap-x-2">
@@ -335,13 +340,13 @@
       <!-- <hr class="text-3xl"> -->
       <div class="flex flex-col lg:flex-row  lg:gap-x-4 gap-y-6">
         <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg">React</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Frontend</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Junior</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg">React</h3>
         </div>
           <div class="flex items-center gap-x-4 flex-wrap">
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> Sass</h3>
-          <h3 class="bg-green-100 text-green-300 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> Sass</h3>
+          <h3 class="bg-green-100 job-tag text-teal-600 text-[1rem] font-semibold p-2 rounded-lg"> JavaScript</h3>
         </div>
       </div>
     </article>
